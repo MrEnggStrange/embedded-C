@@ -65,6 +65,49 @@ Each day represents a foundational step toward mastering embedded systems and mi
 
 ---
 
+✅ Day 4: Traffic Light Control System Simulation (FSM-Based) – HAL Programming
+Objective: Simulate a basic Traffic Light Control System using a Finite State Machine (FSM) and STM32 HAL APIs on the STM32F407 microcontroller.
+
+🚦 System Overview:
+This project simulates a simple 3-light traffic signal using LEDs:
+
+- Green LED (PD12) – Go
+
+- Orange LED (PD13) – Caution
+
+- Red LED (PD14) – Stop
+
+The system cycles through the standard traffic light phases using an FSM approach.
+
+🧠 FSM States:
+- State Name	Active LED	Duration
+- STATE_GREEN	Green	5 sec
+- STATE_YELLOW	Orange	2 sec
+- STATE_RED	Red	5 sec
+
+🛠️ Step-by-Step Implementation (Using HAL):
+1. Initialize HAL and GPIOs
+- Use STM32CubeMX to:
+- Enable GPIOD (Clock)
+- Configure PD12, PD13, PD14 as Output
+- Generate initialization code
+
+2. Define FSM States
+3. ontrol LEDs Based on State
+4. Main FSM Logic (in while(1))
+5. Get Next State & Duration
+
+✅ Result:
+- The system automatically cycles through traffic light phases with correct delays using HAL APIs and a clean FSM structure.
+
+📚 Key Concepts:
+- Finite State Machine (FSM)
+- HAL GPIO Control
+- Modular Design for Expandability
+  
+🔜 Next Up (Day 5 Preview):
+Add Pedestrian Button to request safe crossing
+
 ## 💻 Tools Used
 
 - 🔧 **IDE:** STM32CubeIDE / Keil / VS Code with OpenOCD
@@ -81,5 +124,6 @@ Each day represents a foundational step toward mastering embedded systems and mi
 - GPIO configuration
 - Debugging via SWV / ITM
 - Efficient C programming for microcontrollers
+- HAL
 
 ---
