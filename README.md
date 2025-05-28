@@ -65,10 +65,10 @@ Each day represents a foundational step toward mastering embedded systems and mi
 
 ---
 
-✅ Day 4: Traffic Light Control System Simulation (FSM-Based) 
+### ✅ Day 4: Traffic Light Control System Simulation (FSM-Based) 
 
 – HAL Programming
-Objective: Simulate a basic Traffic Light Control System using a Finite State Machine (FSM) and STM32 HAL APIs on the STM32F407 microcontroller.
+**Objective:**: Simulate a basic Traffic Light Control System using a Finite State Machine (FSM) and STM32 HAL APIs on the STM32F407 microcontroller.
 
 🚦 System Overview:
 This project simulates a simple 3-light traffic signal using LEDs:
@@ -84,7 +84,7 @@ The system cycles through the standard traffic light phases using an FSM approac
 - STATE_YELLOW	Orange	2 sec
 - STATE_RED	Red	5 sec
 
-🛠️ Step-by-Step Implementation (Using HAL):
+#### 🛠️ Step-by-Step Implementation (Using HAL):
 1. Initialize HAL and GPIOs
 - Use STM32CubeMX to:
 - Enable GPIOD (Clock)
@@ -103,14 +103,16 @@ The system cycles through the standard traffic light phases using an FSM approac
 - Finite State Machine (FSM)
 - HAL GPIO Control
 - Modular Design for Expandability
+
+---
   
-✅ Day 5: Traffic Light Control System Simulation (FSM-Based) modfication with Pedestrian Button Interrupt – HAL Programming
+### ✅ Day 5: Traffic Light Control System Simulation (FSM-Based) modfication with Pedestrian Button Interrupt – HAL Programming
 Objective: Simulate a basic Traffic Light Control System using a Finite State Machine (FSM) and STM32 HAL APIs on the STM32F407 microcontroller.
   
 🚦 Pedestrian Button Interrupt (EXTI) — Extension Feature
 - This enhancement adds pedestrian crossing functionality to the basic traffic light finite state machine (FSM) implemented on the STM32F407 Discovery Board.
 
-🧠 Objective
+🧠**Objective:**
 - When a pedestrian presses the button (simulated using the built-in USER button on PA0):
 - If the traffic light is GREEN:
 - Transition to ORANGE → RED to stop traffic.
@@ -121,7 +123,7 @@ Objective: Simulate a basic Traffic Light Control System using a Finite State Ma
 - Component	Pin Used	Purpose
 - User Button	PA0	EXTI input for pedestrian interrupt
 
-✅ How to Implement
+#### ✅ How to Implement
 🔧 1. Configure EXTI on PA0 in STM32CubeMX
 - Open your .ioc file in STM32CubeIDE.
 - Click on PA0 (usually labeled USER_BUTTON).
@@ -142,6 +144,8 @@ Objective: Simulate a basic Traffic Light Control System using a Finite State Ma
 - On button press during GREEN: triggers a controlled transition to RED.
 - During RED: activates pedestrian crossing wait time (4 seconds).
 - The FSM then continues as usual.
+
+---
 
 ## 💻 Tools Used
 
