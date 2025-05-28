@@ -105,8 +105,44 @@ The system cycles through the standard traffic light phases using an FSM approac
 - HAL GPIO Control
 - Modular Design for Expandability
   
-🔜 Next Up (Day 5 Preview):
-Add Pedestrian Button to request safe crossing
+✅ Day 5: Traffic Light Control System Simulation (FSM-Based) modfication with Pedestrian Button Interrupt – HAL Programming
+Objective: Simulate a basic Traffic Light Control System using a Finite State Machine (FSM) and STM32 HAL APIs on the STM32F407 microcontroller.
+  
+🚦 Pedestrian Button Interrupt (EXTI) — Extension Feature
+- This enhancement adds pedestrian crossing functionality to the basic traffic light finite state machine (FSM) implemented on the STM32F407 Discovery Board.
+
+🧠 Objective
+- When a pedestrian presses the button (simulated using the built-in USER button on PA0):
+- If the traffic light is GREEN:
+- Transition to ORANGE → RED to stop traffic.
+- Allow 4 seconds of pedestrian crossing time before resuming the cycle.
+- This is done using external interrupt (EXTI) functionality on the GPIO pin.
+
+🧰 Hardware Used
+- Component	Pin Used	Purpose
+- User Button	PA0	EXTI input for pedestrian interrupt
+
+✅ How to Implement
+🔧 1. Configure EXTI on PA0 in STM32CubeMX
+- Open your .ioc file in STM32CubeIDE.
+- Click on PA0 (usually labeled USER_BUTTON).
+- Set Mode to GPIO_EXTI0.
+- Go to NVIC Settings and enable the EXTI line0 interrupt.
+
+⚙️ 2. Regenerate Code
+- Click Project -> Generate Code to update your code with the EXTI configuration.
+
+🧑‍💻 3. Modify FSM Logic in main.c
+- Declare the pedestrian flag globally:
+- In your FSM switch statement (while(1) loop) write the logic code:
+
+📲 4. Add the EXTI Interrupt Callback
+- At the bottom of your main.c , add pedestrian Interrupt Callback function.
+
+✅ Result:
+- On button press during GREEN: triggers a controlled transition to RED.
+- During RED: activates pedestrian crossing wait time (4 seconds).
+- The FSM then continues as usual.
 
 ## 💻 Tools Used
 
