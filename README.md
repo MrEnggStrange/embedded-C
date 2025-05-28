@@ -65,16 +65,15 @@ Each day represents a foundational step toward mastering embedded systems and mi
 
 ---
 
-✅ Day 4: Traffic Light Control System Simulation (FSM-Based) – HAL Programming
+✅ Day 4: Traffic Light Control System Simulation (FSM-Based) 
+
+– HAL Programming
 Objective: Simulate a basic Traffic Light Control System using a Finite State Machine (FSM) and STM32 HAL APIs on the STM32F407 microcontroller.
 
 🚦 System Overview:
 This project simulates a simple 3-light traffic signal using LEDs:
-
 - Green LED (PD12) – Go
-
 - Orange LED (PD13) – Caution
-
 - Red LED (PD14) – Stop
 
 The system cycles through the standard traffic light phases using an FSM approach.
