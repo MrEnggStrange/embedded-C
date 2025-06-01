@@ -146,6 +146,19 @@ Objective: Simulate a basic Traffic Light Control System using a Finite State Ma
 - The FSM then continues as usual.
 
 ---
+✅ Day 6: Bitwise Operators & Even-Odd Detection – Embedded Bit Manipulation
+- Objective: Master bitwise operators and bit manipulation techniques in C by implementing a simple even-odd number checker using raw binary operations on the STM32F407 Discovery board.
+
+🧠 Core Concepts Covered:
+- Bitwise Operators: &, |, ^, ~, <<, >>  
+- Bit masking & clearing
+- Efficient embedded logic using direct binary manipulation
+- Determining even vs. odd using the LSB (Least Significant Bit)
+
+🔬 What to be done:
+- Create an input variable (int32_t num1)
+- Use bitwise AND (&) to check if LSB is 1 (odd) or 0 (even)
+- Print result to the SWV ITM Console
 
 ## 💻 Tools Used
 
