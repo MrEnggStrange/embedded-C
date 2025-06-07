@@ -148,9 +148,9 @@ Objective: Simulate a basic Traffic Light Control System using a Finite State Ma
 ---
 
 ### ✅ Day 6: Bitwise Operators & Even-Odd Detection – Embedded Bit Manipulation
-- Objective: Master bitwise operators and bit manipulation techniques in C by implementing a simple even-odd number checker using raw binary operations on the STM32F407 Discovery board.
+- **Objective:**  Master bitwise operators and bit manipulation techniques in C by implementing a simple even-odd number checker using raw binary operations on the STM32F407 Discovery board.
 
-🧠 **Core Concepts Covered**:
+🧠 **Core Concepts Covered:**
 - Bitwise Operators: &, |, ^, ~, <<, >>  
 - Bit masking & clearing
 - Efficient embedded logic using direct binary manipulation
@@ -160,6 +160,52 @@ Objective: Simulate a basic Traffic Light Control System using a Finite State Ma
 - Create an input variable (int32_t num1)
 - Use bitwise AND (&) to check if LSB is 1 (odd) or 0 (even)
 - Print result to the SWV ITM Console
+
+---
+
+### ✅ Day 7: LED Toggle – Bare-Metal Embedded (No HAL/LL)
+- 🔧 **Objective:** Blink the Green LED (LD4 - Pin PD12) continuously using bare-metal register-level programming without any HAL or LL libraries.
+
+#### 🧠 Key Concepts
+- Direct register access using memory-mapped I/O
+- Clock enable through RCC
+- GPIO mode configuration
+- Toggling output pin using bitwise operations
+- Software delay loops
+
+#### 💻 Program Summary
+- This program toggles the Green LED (PD12) on and off at a fixed interval using direct register access. No HAL, CMSIS, or LL libraries are used — only raw C and STM32F407 register addresses.
+
+#### 📍 Memory-Mapped Register Addresses
+- Register	Address	Purpose
+- RCC_AHB1ENR	0x40023830	Enables peripheral clock to GPIO ports
+- GPIOD_MODER	0x40020C00	Configures GPIO mode (Input/Output)
+- GPIOD_ODR	0x40020C14	Controls GPIO output level
+
+**⚙️ Step-by-Step Execution**
+1. Enable GPIOD Clock
+- *pClkCtrlReg |= (1 << 3); // Enable clock to GPIOD
+2. Configure PD12 as Output
+- *pPortDModeReg &= ~(3 << 24); // Clear bits 25:24
+- *pPortDModeReg |=  (1 << 24); // Set bit 24: Output mode
+3. Toggle PD12 (LED)
+- *pPortDOutReg |=  (1 << 12); // Turn ON LED
+// Delay Loop
+- *pPortDOutReg &= ~(1 << 12); // Turn OFF LED
+// Delay Loop
+**🧪 Result**
+- ✅ The Green LED (LD4) toggles ON and OFF every ~300ms using direct register manipulation.
+- ✅ No external libraries were used — only bare-metal access.
+
+**📚 Concepts Reinforced**
+- Bitwise operations: |, &, ~
+- Memory-mapped I/O
+- Embedded delay loops
+- GPIO peripheral control via RCC
+
+**📎 Notes**
+- Delay timing depends on compiler optimization and system clock.
+- This is a fundamental exercise in low-level embedded control without abstraction layers.
 
 ---
 
