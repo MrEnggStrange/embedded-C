@@ -209,6 +209,53 @@ Objective: Simulate a basic Traffic Light Control System using a Finite State Ma
 
 ---
 
+### ✅ Day 8: GPIO Register-Level LED Blinking – STM32F407 Discovery Board
+
+🎯 **Objective:**
+
+Blink the onboard **Green LED (PD12)** on the STM32F407 Discovery Board **using direct register-level access** (bit manipulation).
+
+- Low-level bit manipulation
+- RCC and GPIO register understanding
+- Struct-based memory-mapped I/O in Embedded C
+
+---
+
+## 🧰 Hardware Used
+
+| Component        | Pin Used | Purpose                   |
+|------------------|----------|---------------------------|
+| STM32F407VG      | PD12     | Green LED Output          |
+
+---
+
+## 🧠 Learning Outcomes
+
+- Access peripheral registers using memory-mapped structures
+- Enable GPIO peripheral clock via RCC_AHB1ENR
+- Configure GPIO pin mode to output
+- Toggle GPIO pin using ODR (Output Data Register)
+- Implement delay using busy-wait loop
+
+---
+
+## 🛠️ Implementation Steps
+
+1. ✅ Enable Clock for GPIOD
+2. ⚙️ Configure Pin Mode (PD12 as Output)
+3. 🔁 Blink LED
+
+**✅ Output**
+
+- 🟢 PD12 LED blinks continuously every few hundred milliseconds.
+- ⛔ No HAL or CMSIS functions used — pure register access.
+
+**🧠 Key Takeaways**
+
+- You can manipulate GPIOs directly using memory-mapped register addresses.
+- Bitfield struct design helps with readable embedded code for register access.
+- This is a foundational step before building abstraction layers or using RTOS.
+
 ## 💻 Tools Used
 
 - 🔧 **IDE:** STM32CubeIDE / Keil / VS Code with OpenOCD
